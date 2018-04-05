@@ -22,7 +22,12 @@
 #ifndef _GPMF_MP4READER_H
 #define _GPMF_MP4READER_H
 
-#include "../GPMF_parser.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+#include "GPMF_parser.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -35,7 +40,7 @@ typedef struct SampleToChunk
 	uint32_t id;
 } SampleToChunk;
 
-double OpenGPMFSource(const char *filename);
+double OpenGPMFSource(const char *filename, uint32_t *creation_time);
 double OpenGPMFSourceUDTA(const char *filename);
 void CloseGPMFSource(void);
 uint32_t GetNumberGPMFPayloads(void);
